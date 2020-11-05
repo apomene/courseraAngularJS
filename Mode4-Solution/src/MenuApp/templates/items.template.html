@@ -1,0 +1,15 @@
+<ul>
+    <li ng-repeat="item in $ctrl.items">
+      {{ item.name}}
+      {{item.short_name}}
+      {{item.description}}
+    </li>
+</ul>
+
+<a ui-sref="categories">Categories</a> &lt; <span>List</span>
+
+<h3>Davids Restaurant Items</h3>
+<items items="itemsCtrl.items"></items>
+
+<ui-view></ui-view>
+  

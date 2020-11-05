@@ -23,10 +23,7 @@ function MenuDataService($http, ApiPathCategories,ApiPathCategory) {
         method: "GET",
         url: (ApiPathCategory+categoryShortName)
       });
-      response.then(function (result) {
-        return response.data;
-      
-      });
+      return response;
     }
 }
 
