@@ -43,18 +43,15 @@ function routeConfig ($stateProvider) {
     })
     .state('public.signup',{
       url:'/signup',
-      templateUrl:'src/public/register/signup.html',
-      controller:'RegistrationController',
-      controllerAs:'reg'
-      // resolve: {
-      //     data: ['RegService', function ( RegService) {
-      //     return RegService.getItem('L19');
-      //   }]
-      //}   
+       templateUrl:'src/public/register/register.html',
+       controller:'RegistrationController',
+       controllerAs:'reg'    
     })
     .state('public.myinfo',{
       url:'/myinfo',
-      templateUrl:'src/public/myinfo.html'       
+      templateUrl:'src/public/register/info.html',
+      controller:'InformationController',
+      controllerAs:'ctrlinfo'         
     });
 }
 })();

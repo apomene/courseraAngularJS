@@ -1,72 +1,68 @@
-<register ng-controller="RegistrationController as reg">
-    <h1>Register Form</h1>
 
-    <fieldset>
-      <legend>Registration for Newsletter</legend>
-      <form name='regForm' novalidate>
+  <h1>Register Form</h1>
 
-        <input type="text" name="firstname" placeholder="Fill in First Name"
-          ng-model="reg.user.firstname"
-          required
-        >
-          {{ reg.user.firstname }}
-          <span
-            ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
-           First Name is required
+  <fieldset style="color: black;">
+    <legend>Registration for Newsletter</legend>
+    <form name='regForm' novalidate>
+
+      <input type="text" name="firstname" placeholder="Fill in First Name"
+        ng-model="reg.firstname"
+        required
+      >
+        {{ reg.firstname }}
+        <span
+          ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
+         First Name is required
+      </span>
+        <br>
+
+        <input type="text" name="lastname" placeholder="Fill in Last Name"
+        ng-model="reg.lastname"
+        required
+      >
+        {{ reg.lastname }}
+        <span
+          ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
+          Last Name is required         
+      </span>
+        <br>
+
+      <input type="email" name="email" placeholder="Email"
+        ng-model="reg.email"
+        required>
+        <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+          Must be a valid email address: handle@domain format
         </span>
-          <br>
+        <br>
 
-          <input type="text" name="lastname" placeholder="Fill in Last Name"
-          ng-model="reg.user.lastname"
-          required
-        >
-          {{ reg.user.lastname }}
-          <span
-            ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
-            Last Name is required         
+      <input type="text" name="phone" placeholder="Phone ###-###-####"
+        ng-model="reg.phone"
+        pattern="(\d{3})-(\d{3})-(\d{4})">
+        <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+          Phone must be in the format ###-###-####.
         </span>
-          <br>
+        <br>
+        <input type="text" name="dish"  placeholder="Pick a favourite dish"
+        ng-model="reg.dish"
+        required
+      >
+      <span ng-if="reg.notValid">No such menu number exists</span>
+        <span  
+          ng-if="regForm.dish.$error.required && regForm.dish.$touched">
+       Favourite dish is required
+      </span>
+        <br>
 
-        <input type="email" name="email" placeholder="Email"
-          ng-model="reg.user.email"
-          required>
-          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
-            Must be a valid email address: handle@domain format
-          </span>
-          <br>
+      <button
+        ng-disabled="regForm.$invalid"
+        ng-click="reg.submit()">Submit</button>
 
-        <input type="text" name="phone" placeholder="Phone ###-###-####"
-          ng-model="reg.user.phone"
-          pattern="(\d{3})-(\d{3})-(\d{4})">
-          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
-            Phone must be in the format ###-###-####.
-          </span>
-          <br>
-          <input type="text" name="dish" placeholder="Pick a favourite dish"
-          ng-model="reg.user.dish"
-          required
-        >
-        <span ng-if="reg.notValid">No such menu number exists</span>
-          <span  
-            ng-if="regForm.dish.$error.required && regForm.dish.$touched">
-         Favourite dish is required
-        </span>
-          <br>
+        <!-- <div style="margin-top: 10px;">
+          Form valid? {{ regForm.$valid }}
+        </div> -->
+    </form>
+  </fieldset>
 
-        <button
-          ng-disabled="regForm.$invalid"
-          ng-click="reg.submit()">Submit</button>
-
-          <!-- <div style="margin-top: 10px;">
-            Form valid? {{ regForm.$valid }}
-          </div> -->
-      </form>
-    </fieldset>
-
-    <div id="info" ng-if="reg.completed">
-      Username: {{ reg.user.username}} <br>
-      Email: {{ reg.user.email}} <br>
-      Phone: {{ reg.user.phone }}
-      DAta:{{ reg.user.data }}
-    </div>   
-</register>
+  <div id="info" ng-if="reg.completed">
+    Your information has been saved
+  </div>   
