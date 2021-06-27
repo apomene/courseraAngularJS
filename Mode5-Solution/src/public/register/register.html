@@ -1,15 +1,15 @@
 
-  <h1>Register Form</h1>
+  <h1 style="text-align: center;">Register Form</h1>
 
   <fieldset style="color: black;">
-    <legend>Registration for Newsletter</legend>
-    <form name='regForm' novalidate>
+    <legend style="text-align: center;">Registration for Newsletter</legend>
+    <form name='regForm' novalidate style="padding: 20px;margin:20px;">
 
       <input type="text" name="firstname" placeholder="Fill in First Name"
         ng-model="reg.firstname"
         required
       >
-        {{ reg.firstname }}
+      
         <span
           ng-if="regForm.firstname.$error.required && regForm.firstname.$touched">
          First Name is required
@@ -20,7 +20,7 @@
         ng-model="reg.lastname"
         required
       >
-        {{ reg.lastname }}
+      
         <span
           ng-if="regForm.lastname.$error.required && regForm.lastname.$touched">
           Last Name is required         

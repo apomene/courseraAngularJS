@@ -5,7 +5,7 @@
 <div style="text-align: center;">
     <h2 style="text-align: center;">Favourite Dish</h2>
     <h3 class="menu-item-title" style="text-align: center;">{{ctrlinfo.data.name}}</h3>
-    <img style="align-content: center" img-responsive" width="250" height="150" ng-src="{{ctrlinfo.basePath}}/images/{{ctrlinfo.data.short_name}}.jpg" alt="{{ctrlinfo.data.name}}">
+    <img style="align-content: center"  width="250" height="150" ng-src="{{ctrlinfo.basePath}}/images/{{ctrlinfo.data.short_name}}.jpg" alt="{{ctrlinfo.data.name}}">
     <div style="text-align: center;"class="menu-item-description"> 
         
         <p style="text-align: center;" class="menu-item-details">{{ctrlinfo.data.description}}</p>
@@ -13,5 +13,6 @@
 </div>
     </div> 
 <div ng-if="!ctrlinfo.signed">
-    Not Signed Up Yet. Sign up Now!
+    <a ui-sref="public.signup">
+    Not Signed Up Yet. Sign up Now!</a>
 </div>
