@@ -1,14 +1,14 @@
- <div ng-if="ctrlinfo.signed">
-    <h2>Name : {{ctrlinfo.firstname}} {{ctrlinfo.lastname}}</h2>
+ <div ng-if="ctrlinfo.signed" style="text-align: center;">
+    <h2>Hello  {{ctrlinfo.firstname}} {{ctrlinfo.lastname}}!</h2>
     <h4>phone: {{ctrlinfo.phone}}</h4>
     <div>email: {{ctrlinfo.email}}</div>
-    {{ctrlinfo.data}}
-<div class="row">
-    <h2>Favourite Dish</h2>
-    <img class="img-responsive" width="250" height="150" ng-src="{{ctrlinfo.basePath}}/images/{{ctrlinfo.data.short_name}}.jpg" alt="{{ctrlinfo.data.name}}">
-    <div class="menu-item-description col-sm-7">
-        <h3 class="menu-item-title">{{ctrlinfo.data.name}}</h3>
-        <p class="menu-item-details">{{ctrlinfo.data..description}}</p>
+<div style="text-align: center;">
+    <h2 style="text-align: center;">Favourite Dish</h2>
+    <h3 class="menu-item-title" style="text-align: center;">{{ctrlinfo.data.name}}</h3>
+    <img style="align-content: center" img-responsive" width="250" height="150" ng-src="{{ctrlinfo.basePath}}/images/{{ctrlinfo.data.short_name}}.jpg" alt="{{ctrlinfo.data.name}}">
+    <div style="text-align: center;"class="menu-item-description"> 
+        
+        <p style="text-align: center;" class="menu-item-details">{{ctrlinfo.data.description}}</p>
       </div>
 </div>
     </div> 

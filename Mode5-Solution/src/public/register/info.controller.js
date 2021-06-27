@@ -6,6 +6,7 @@ angular.module('ValidationApp')
 
 
 InformationController.$inject = ['DataService']
+
 function InformationController(DataService) {
   var ctrlinfo = this;
   ctrlinfo.signed = DataService.userSigned;
@@ -14,6 +15,7 @@ function InformationController(DataService) {
   ctrlinfo.phone = DataService.userPhone;
   ctrlinfo.email = DataService.userEmail;
   ctrlinfo.data = DataService.userData;
+  ctrlinfo.basePath = 'https://www.davidchuschinabistro.com';
   
 }
 
